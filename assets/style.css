@@ -1,0 +1,26 @@
+.body {
+    background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar {
+    background-color: aliceblue;
+}
+
+.nav-link {
+    color: darkgray;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.container {
+   
+}
+
+#questions {
+
+}
