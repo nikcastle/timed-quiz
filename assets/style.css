@@ -5,6 +5,8 @@
 
 .navbar {
     background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-link {
@@ -14,13 +16,27 @@
 h1 {
     font-size: 20px;
     text-align: center;
-    color: #333;
+    color: #2D217C;
+}
+
+#start {
+    color: #2D217C;
+    background-color: #F2E7FA;
+    text-align: center;
+    font-size: 60px;
+    margin: 0 auto;
+    padding: 15px;
+    border: #2D217C solid;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 300px;
+    
 }
 
 .container {
    
 }
 
-#questions {
+.questions {
 
 }
