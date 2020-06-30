@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Your Knowledge</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <!-- This should include a link to view high scores and the timer -->
         <a class="nav-link" href="#">View High Scores</a>
+        <div id="timer"></div>
     </nav>
 
     <section class="container">
         <!-- This will be the main content of the site. -->
         <h1>Test Your Knowledge!</h1>
-        <main id="questions">
-            <row>
-                <card>
-                    <!-- The card will contain the various questions and their multiple choice answers. -->
-                </card>
-            </row>
+        <main id="main">
+            <div id="start">Start the Quiz</div>
+            <section class="quiz" style="display:none">
+                <row>
+                    <card class="questions">
+                        <!-- The card will contain the various questions and their multiple choice answers. -->
+                    </card>
+                </row>
+            </section>
         </main>
     </section>
     <!--Use cards and rows to create the body.  -->
-    
-    <link rel="script" src="script.js">
+
+    <script rel="script" src="script.js"></script>
 </body>
+
 </html>
