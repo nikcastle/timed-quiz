@@ -38,5 +38,23 @@ h1 {
 }
 
 .questions {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    border: #2D217C 2px solid;
 
+}
+
+.results {
+
+}
+
+button {
+    background-color: #F2E7FA;
+    border: #2D217C solid;
+    border-radius: 15px;
+    display: flex;
+    font-size: 20px;;
+    justify-content: space-evenly;
+    margin: 20px;
+    padding: 20px;
 }
