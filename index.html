@@ -17,7 +17,7 @@
 
     <section class="container">
         <!-- This will be the main content of the site. -->
-        <h1>Test Your Knowledge!</h1>
+        <h1 class="h1">Test Your Knowledge!</h1>
         <main id="main">
             <div id="start">Start the Quiz</div>
             <section class="quiz" style="display:none">
@@ -27,7 +27,23 @@
                     </card>
                 </row>
             </section>
-            <section class="results" style="display:none"></section>
+            <section id="initials" style="display:none">
+                <row>
+                    <card class="input">
+                        <!-- The card will be where the player enters their initials once the game is over -->
+                        <h1>Final Score</h1>
+                        <form>
+                            <input type="text" name= "username" id= "username" placeholder="Player Initials"/>
+                            <button type="submit" class="btn-sm" onclick="saveScores">Save</button>
+                        </form>
+                        <button class="btn-sm">Play Again</button>
+                        <button class="btn-sm">View High Scores</button>
+                    </card>
+                </row>
+            </section>
+            <section class="results" style="display:none">
+                <ul class="list"></ul>
+            </section>
         </main>
     </section>
     <!--Use cards and rows to create the body.  -->
