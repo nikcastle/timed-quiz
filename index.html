@@ -32,12 +32,13 @@
                     <card class="input">
                         <!-- The card will be where the player enters their initials once the game is over -->
                         <h1>Final Score</h1>
+                        <h2 id="highscore"></h2>
                         <div class="flex">
-                            <form>
+                            <form id="submit">
                                 <input type="text" name= "username" id= "username" placeholder="Player Initials"/>
-                                <button type="submit" class="btn-sm" onclick="saveScores">Save</button>
+                                <button type="submit" class="btn-sm">Save</button>
                             </form>
-                            <button class="btn-md">View High Scores</button>
+                            <button id="hiScores" class="btn-md">View High Scores</button>
                         </div>
                     </card>
                 </row>
