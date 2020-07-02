@@ -1,5 +1,4 @@
 .body {
-    background-color: lightgray;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -34,10 +33,6 @@ h1 {
     
 }
 
-.container {
-   
-}
-
 .questions {
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -45,14 +40,12 @@ h1 {
 
 }
 
-.results {
-
-}
 
 button {
     background-color: #F2E7FA;
     border: #2D217C solid;
     border-radius: 15px;
+    cursor: pointer;
     display: flex;
     font-size: 20px;;
     justify-content: center;
@@ -64,22 +57,38 @@ button {
     background-color: #F2E7FA;
     border: #2D217C solid;
     border-radius: 15px;
-    display: flex;
-    font-size: 12px;;
-    justify-content: center;
     margin: 12px;
     padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-form{
+.btn-md {
+    background-color: #F2E7FA;
+    border: #2D217C solid;
+    border-radius: 15px;
+    margin: 12px;
+    padding: 12px;
+    width: 280px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.flex{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
 }
+
 
 input {
-    border: none;
+    border: 2px solid lightblue;
     display: flex;
-    font-size: 20px;
+    font-size: 16px;
     justify-content: center;
     margin-bottom: 20px;
+    padding: 12px;
 }

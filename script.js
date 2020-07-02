@@ -26,14 +26,8 @@ var score = 0;
 var input = document.getElementById("initials")
 var j = 0;
 var interval;
-var players = JSON.parse(localStorage.getItem(secondsLeft));
 var rankings = document.querySelector(".results");
-var playerList = document.querySelector(".list");
-var playerName = document.getElementById("username");
-var player = {
-    name: playerName, 
-    score: secondsLeft
-     }
+
 
 function renderQuestion(){
         document.querySelector(".questions").innerHTML = "";
@@ -69,13 +63,12 @@ function checkAnswer (event) {
 
 
 function endGame () {
-    console.log("end");
     clearInterval;
+    score = secondsLeft;
     document.querySelector("#initials").setAttribute("style", "display:block");
     document.querySelector(".quiz").setAttribute("style", "display: none");
-    saveScores();
-    userInitials();
-    // localStorage.getItem();
+    localStorage.getItem();
+    document.querySelector("#initials").textContent = "Your final score is " + score;
 }
 
 // quiz timer
@@ -95,23 +88,36 @@ function counter () {
 }
 
 //commit scores to local storage so they can be pulled later
-function saveScores (event) {
-    localStorage.setItem("score", JSON.stringify(secondsLeft));
-}
 
 //save player initials
-function userInitials () {
+function saveScores () {
+   var userName = document.querySelector("#username").value.trim();
+   var finalScore = {
+       score: score,
+       name: userName
+   };
+   
+    var highScores = JSON.parse(window.localStorage.getItem("High Scores")) || [];
+    highScores.push(finalScore);
+   window.localStorage.setItem("High Scores", JSON.stringify(highScores));
+
    input.setAttribute("style", "display: block");
-    saveScores(player);
     returnHighScores(player);
 }
 
-//display high scores from local storage
+// display high scores from local storage
 function returnHighScores () {
-    if(players !== null){
-        sortArray(players);
-    }
- }
+    var highScores = JSON.parse(window.localStorage.getItem("High Scores")) || [];
+
+    highScores.forEach(function(score) {
+        var pTag = document.createElement("p");
+        pTag.textContent = score.name + " " + score.score;
+
+        document.querySelector("results").appendChild(pTag);
+    });
+}
+    
+ 
 
 
 
