@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar">
         <!-- This should include a link to view high scores and the timer -->
-        <a class="nav-link" href="#">View High Scores</a>
+        <a class="nav-link" href="#hiScores">View High Scores</a>
         <div id="timer"></div>
     </nav>
 
@@ -36,19 +36,22 @@
                         <div class="flex">
                             <form id="submit">
                                 <input type="text" name= "username" id= "username" placeholder="Player Initials"/>
-                                <button type="submit" class="btn-sm">Save</button>
+                                <button type="submit" class="btn-sm">Save Your Score</button>
                             </form>
                             <button id="hiScores" class="btn-md">View High Scores</button>
                         </div>
                     </card>
                 </row>
             </section>
-            <section class="results" style="display:none">
+            <section>
+            <row>
+                <!--The high scores will appear here -->
+                <card class="results" style="display:none"></card>    
+            </row>
               
             </section>
         </main>
     </section>
-    <!--Use cards and rows to create the body.  -->
 
     <script rel="script" src="script.js"></script>
 </body>

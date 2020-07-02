@@ -29,7 +29,7 @@ var interval;
 var rankings = document.querySelector("#hiScores");
 var submitForm = document.querySelector("#submit");
 
-
+// This function will pull the questions from the array above
 function renderQuestion(){
         document.querySelector(".questions").innerHTML = "";
         startQuiz.setAttribute("style", "display: none");
@@ -48,6 +48,7 @@ function renderQuestion(){
     } 
 }
 
+//Perform an answer check before moving on to the next question
 function checkAnswer (event) {
     console.log("check");
     if (questions[j].correct !== event.target.textContent) {
@@ -62,18 +63,17 @@ function checkAnswer (event) {
     } else endGame();
 }
 
-
+//This function will end the game
 function endGame () {
     console.log("endgame");
     clearInterval(interval);
     score = secondsLeft;
     document.querySelector("#initials").setAttribute("style", "display:block");
     document.querySelector(".quiz").setAttribute("style", "display: none");
-    // localStorage.getItem();
     document.querySelector("#highscore").textContent = "Your final score is " + score;
 }
 
-// quiz timer
+// Quiz timer
 function counter () {
    var timer = document.querySelector("#timer")
     interval = setInterval(function() { 
@@ -89,8 +89,8 @@ function counter () {
     }, 1000);
 }
 
-//commit scores to local storage so they can be pulled later
 
+//commit scores to local storage so they can be pulled later
 //save player initials
 function saveScores (event) {
     event.preventDefault();
@@ -108,6 +108,7 @@ function saveScores (event) {
    alert("Your score has been saved!");
 }
 
+//call scores from local storage to retrieve high scores
 // display high scores from local storage
 function returnHighScores () {
     var highScores = JSON.parse(window.localStorage.getItem("High-Scores")) || [];
@@ -120,14 +121,8 @@ function returnHighScores () {
     });
 }
     
- 
 
-
-
-//call scores from local storage to retrieve high scores
-
-
-// Add event listener to start button
+// Add event listeners to relevant buttons
 startQuiz.addEventListener("click",renderQuestion)
 startQuiz.addEventListener("click", counter)
 submitForm.addEventListener("submit", saveScores)
