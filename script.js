@@ -26,7 +26,8 @@ var score = 0;
 var input = document.getElementById("initials")
 var j = 0;
 var interval;
-var rankings = document.querySelector(".results");
+var rankings = document.querySelector("#hiScores");
+var submitForm = document.querySelector("#submit");
 
 
 function renderQuestion(){
@@ -63,12 +64,13 @@ function checkAnswer (event) {
 
 
 function endGame () {
-    clearInterval;
+    console.log("endgame");
+    clearInterval(interval);
     score = secondsLeft;
     document.querySelector("#initials").setAttribute("style", "display:block");
     document.querySelector(".quiz").setAttribute("style", "display: none");
-    localStorage.getItem();
-    document.querySelector("#initials").textContent = "Your final score is " + score;
+    // localStorage.getItem();
+    document.querySelector("#highscore").textContent = "Your final score is " + score;
 }
 
 // quiz timer
@@ -90,30 +92,31 @@ function counter () {
 //commit scores to local storage so they can be pulled later
 
 //save player initials
-function saveScores () {
+function saveScores (event) {
+    event.preventDefault();
    var userName = document.querySelector("#username").value.trim();
    var finalScore = {
        score: score,
        name: userName
    };
    
-    var highScores = JSON.parse(window.localStorage.getItem("High Scores")) || [];
+    var highScores = JSON.parse(window.localStorage.getItem("High-Scores")) || [];
     highScores.push(finalScore);
-   window.localStorage.setItem("High Scores", JSON.stringify(highScores));
+   window.localStorage.setItem("High-Scores", JSON.stringify(highScores));
 
    input.setAttribute("style", "display: block");
-    returnHighScores(player);
+    // returnHighScores(player);
 }
 
 // display high scores from local storage
 function returnHighScores () {
-    var highScores = JSON.parse(window.localStorage.getItem("High Scores")) || [];
-
+    var highScores = JSON.parse(window.localStorage.getItem("High-Scores")) || [];
+    document.querySelector(".results").setAttribute("style", "display: block");
     highScores.forEach(function(score) {
         var pTag = document.createElement("p");
         pTag.textContent = score.name + " " + score.score;
 
-        document.querySelector("results").appendChild(pTag);
+        document.querySelector(".results").appendChild(pTag);
     });
 }
     
@@ -127,4 +130,5 @@ function returnHighScores () {
 // Add event listener to start button
 startQuiz.addEventListener("click",renderQuestion)
 startQuiz.addEventListener("click", counter)
-username.addEventListener("submit", saveScores)
+submitForm.addEventListener("submit", saveScores)
+rankings.addEventListener("click", returnHighScores)
