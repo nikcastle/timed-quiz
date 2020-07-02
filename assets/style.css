@@ -18,6 +18,11 @@ h1 {
     color: #2D217C;
 }
 
+h2 {
+    text-align: center;
+    color: #2D217C;
+}
+
 #start {
     background-color: #F2E7FA;
     border: #2D217C solid;
@@ -64,7 +69,7 @@ button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.btn-md {
+.btn-md{
     background-color: #F2E7FA;
     border: #2D217C solid;
     border-radius: 15px;
@@ -91,4 +96,15 @@ input {
     justify-content: center;
     margin-bottom: 20px;
     padding: 12px;
+}
+
+p {
+    background-color: #E7D49C;
+    border: #CC9D15 solid;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 12px;
+    padding: 12px;   
+    width: 225px;
 }
