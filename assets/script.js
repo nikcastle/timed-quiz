@@ -31,6 +31,7 @@ var submitForm = document.querySelector("#submit");
 
 // This function will pull the questions from the array above
 function renderQuestion(){
+    console.log("test")
         document.querySelector(".questions").innerHTML = "";
         startQuiz.setAttribute("style", "display: none");
         document.querySelector(".quiz").setAttribute("style", "display: block");
